@@ -1,0 +1,23 @@
+package com.api.service;
+
+import java.util.List;
+
+import com.api.entities.Post;
+
+public interface PostService {
+	
+	//create
+	Post createPost(Post post);
+	
+	//update 
+	Post updatePost(Post post,int postId);
+	
+	//delete post
+	
+	void deletePost(int id);
+	
+	//get single post
+	
+	//get all post
+	public List<Post> getAllPost();
+}

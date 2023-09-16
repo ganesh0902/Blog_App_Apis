@@ -1,0 +1,9 @@
+package com.api.payloads;
+
+public class CategoryDto {
+
+	private String categoryId;
+	private String categoryTitle;
+	private String categoryDescription;
+	
+}

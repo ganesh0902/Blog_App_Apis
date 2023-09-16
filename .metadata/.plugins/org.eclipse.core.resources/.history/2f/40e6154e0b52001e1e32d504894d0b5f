@@ -1,0 +1,13 @@
+package com.apiexceptions;
+
+public class ResourceNotFoundException extends Exception{
+
+	public ResourceNotFoundException()
+	{
+		super("User Not Found");
+	}
+	public ResourceNotFoundException(String msg)
+	{
+		super(msg);
+	}
+}

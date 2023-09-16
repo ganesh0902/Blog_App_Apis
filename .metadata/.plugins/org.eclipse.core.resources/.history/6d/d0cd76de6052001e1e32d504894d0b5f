@@ -1,0 +1,33 @@
+package com.api.service;
+
+import java.util.List;
+
+import com.api.entities.Post;
+import com.api.payloads.PostDto;
+
+public interface PostService {
+	
+	//create
+	Post createPost(PostDto post,int userId,int categoryId);
+	
+	//update 
+	Post updatePost(PostDto post,int postId);
+	
+	//delete post	
+	void deletePost(int id);
+	
+	//get single post
+	public Post getPostById(int id);
+	
+	//get all post
+	public List<Post> getAllPost();
+	
+	//get post by category	
+	public List<Post> getPostByCategory(int categoryId);
+	
+	//get Post by user
+	public List<Post> getPostByUser(int userId);
+	
+	//list search
+	public List<Post> searchByPosts(String keyword);
+}

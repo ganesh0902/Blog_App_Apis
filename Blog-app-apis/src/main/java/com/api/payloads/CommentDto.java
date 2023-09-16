@@ -1,0 +1,39 @@
+package com.api.payloads;
+
+import com.api.entities.Post;
+
+public class CommentDto {
+
+	private int id;
+	private String contain;
+	
+	public CommentDto() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	public CommentDto(int id, String contain) {
+		super();
+		this.id = id;
+		this.contain = contain;
+		
+	}
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public String getContain() {
+		return contain;
+	}
+	public void setContain(String contain) {
+		this.contain = contain;
+	}
+
+	@Override
+	public String toString() {
+		return "CommentDto [id=" + id + ", contain=" + contain + ", post=]";
+	};
+	
+
+}

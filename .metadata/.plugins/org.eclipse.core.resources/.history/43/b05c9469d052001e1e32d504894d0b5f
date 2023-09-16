@@ -1,0 +1,13 @@
+package com.api.example;
+
+import java.util.ArrayList;
+
+public class App {
+
+	public static void main(String[] args) {
+		
+		List<Emp> emp=new ArrayList<>();
+		
+		
+	}
+}

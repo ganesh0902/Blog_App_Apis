@@ -1,0 +1,13 @@
+package com.api.payloads;
+
+public class CategoryDto {
+
+	private int categoryId;
+	private String categoryTitle;
+	private String categoryDescription;
+	public CategoryDto() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	
+}

@@ -117,7 +117,7 @@ public class PostController {
 	public void downloadImage(@PathVariable("imageName") String imageName,HttpServletResponse response) throws IOException
 	{
 		InputStream resource = this.fileServiceImpl.getResource(path, imageName);
-		
+		 
 		response.setContentType(MediaType.IMAGE_JPEG_VALUE);
 		
 		org.springframework.util.StreamUtils.copy(resource,response.getOutputStream());

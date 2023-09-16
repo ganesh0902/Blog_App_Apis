@@ -1,9 +1,10 @@
 package com.api.entities;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
-import org.antlr.v4.runtime.misc.NotNull;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
@@ -12,7 +13,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
-
+import com.api.entities.*;
 @Entity
 public class User {
 
@@ -28,12 +29,16 @@ public class User {
 	@OneToMany(mappedBy ="user",cascade = CascadeType.ALL,fetch =  FetchType.LAZY )
 	private List<Post> posts=new ArrayList<>();
 	
+	@OneToMany(mappedBy = "user",cascade = CascadeType.ALL)
+	private Set<Comment> comment=new HashSet<>();
+	
 	public User() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	
-	public User(int id, String name, String email, String password, String about, List<Post> posts) {
+
+	public User(int id, String name, String email, String password, String about, List<Post> posts,
+			Set<Comment> comment) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -41,6 +46,17 @@ public class User {
 		this.password = password;
 		this.about = about;
 		this.posts = posts;
+		this.comment = comment;
+	}
+
+
+
+	public Set<Comment> getComment() {
+		return comment;
+	}
+
+	public void setComment(Set<Comment> comment) {
+		this.comment = comment;
 	}
 
 	public List<Post> getPosts() {

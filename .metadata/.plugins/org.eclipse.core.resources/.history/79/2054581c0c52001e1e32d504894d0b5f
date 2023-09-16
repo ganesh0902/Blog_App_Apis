@@ -1,0 +1,11 @@
+package com.api.exceptions;
+
+public class ResourceNotFoundException extends Exception{
+
+	private String resourceName;
+	private String fieldName;
+	long fieldValue;
+	
+	
+	
+}

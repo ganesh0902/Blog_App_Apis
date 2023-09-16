@@ -1,0 +1,10 @@
+package com.api.entities;
+
+public class Post {
+
+	private int postId;
+	private String title;
+	private String contain;
+	private String imageName;
+	private Date addDate;
+}

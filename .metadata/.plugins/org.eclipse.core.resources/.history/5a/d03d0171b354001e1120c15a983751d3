@@ -1,0 +1,10 @@
+package com.api.payloads;
+
+import com.api.entities.Post;
+
+public class CommentDto {
+
+	private int id;
+	private String contain;
+	private Post post;;
+}

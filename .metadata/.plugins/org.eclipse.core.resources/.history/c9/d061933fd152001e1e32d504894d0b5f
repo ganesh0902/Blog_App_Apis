@@ -1,0 +1,19 @@
+package com.api.example;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class App {
+
+	public static void main(String[] args) {
+		
+		List<Emp> emp=new ArrayList<>();
+		
+		emp.add(new Emp("Ganesh","38383838383","1"));
+		emp.add(new Emp("shubham","344333333","3"));
+		emp.add(new Emp("azim","3443333333","2"));
+		emp.add(new Emp("dileep","383838383","4"));
+		emp.add(new Emp("manthan","345555543","6"));
+		emp.add(new Emp("rohit","38383838383","8"));
+	}
+}

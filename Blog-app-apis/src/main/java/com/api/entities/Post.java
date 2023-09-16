@@ -1,6 +1,11 @@
 package com.api.entities;
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 
+import com.api.payloads.CommentDto;
+
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -8,6 +13,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 
 @Entity
 public class Post {
@@ -27,14 +33,16 @@ public class Post {
 	
 	@ManyToOne
 	private User user;
+	
+	@OneToMany(mappedBy ="post",cascade = CascadeType.ALL)
+	private Set<Comment> comment =new HashSet<>();
 
 	public Post() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-
 	public Post(int postId, String title, String content, String imageName, Date addedDate, Category category,
-			User user) {
+			User user, Set<Comment> comment) {
 		super();
 		this.postId = postId;
 		this.title = title;
@@ -43,10 +51,14 @@ public class Post {
 		this.addedDate = addedDate;
 		this.category = category;
 		this.user = user;
+		this.comment = comment;
 	}
-
-
-
+	public Set<Comment> getComment() {
+		return comment;
+	}
+	public void setComment(Set<Comment> comment) {
+		this.comment = comment;
+	}
 	public int getPostId() {
 		return postId;
 	}
@@ -105,6 +117,8 @@ public class Post {
 	@Override
 	public String toString() {
 		return "Post [postId=" + postId + ", title=" + title + ", content=" + content + ", imageName=" + imageName
-				+ ", addedDate=" + addedDate + ", category=" + category + ", user=" + user + "]";
+				+ ", addedDate=" + addedDate + ", category=" + category + ", user=" + user + ", comment=" + comment
+				+ "]";
 	}
+
 }

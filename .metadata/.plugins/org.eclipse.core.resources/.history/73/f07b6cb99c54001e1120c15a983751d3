@@ -1,0 +1,29 @@
+package com.api.service.impl;
+
+import java.io.InputStream;
+import java.util.UUID;
+
+import org.springframework.web.multipart.MultipartFile;
+
+import com.api.service.FileService;
+
+public class FileServiceImpl implements FileService{
+
+	@Override
+	public String uploadImage(String path, MultipartFile multipartFile) {
+		
+		String filename = multipartFile.getOriginalFilename();
+		
+		
+		//randome name  generate file
+		
+		String randomeId = UUID.randomUUID().toString();
+		return null;
+	}
+
+	@Override
+	public InputStream getResource(String path, String fileName) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+}

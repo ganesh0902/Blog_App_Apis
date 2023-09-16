@@ -1,0 +1,12 @@
+package com.api.service;
+
+import com.api.entities.User;
+import com.api.payloads.UserDto;
+
+public interface UserService {
+
+	 UserDto createUser(UserDto user);
+	 UserDto userUpdate(UserDto user,int id);
+	 UserDto getUserById(int id);
+	 List<UserDto> getAllUsers();
+}

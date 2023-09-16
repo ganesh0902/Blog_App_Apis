@@ -1,0 +1,33 @@
+package com.api.service.impl;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.api.exceptions.ResourceNotFoundException;
+import com.api.payloads.CommentDto;
+import com.api.repository.CommentRepo;
+import com.api.repository.PostRepo;
+import com.api.service.CommentService;
+
+public class CommentServiceImpl implements CommentService{
+
+	@Autowired
+	private PostRepo postRepo;
+	
+	@Autowired
+	private CommentRepo commentRepo;
+	
+	@Override
+	public CommentDto createComment(CommentDto commentDto, int postId) {
+		// TODO Auto-generated method stub
+		
+		Post post=this.postRepo.findById(postId).orElseThrow(()->new ResourceNotFoundException("Post"," Id ", postId));
+		
+		return null;
+	}
+
+	@Override
+	public void deleteComment(int id) {
+		// TODO Auto-generated method stub
+		
+	}
+}

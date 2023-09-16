@@ -1,9 +1,9 @@
 package com.api.payloads;
 
 import java.util.Date;
-
-import com.api.entities.Category;
-import com.api.entities.User;
+import java.util.HashSet;
+import java.util.Set;
+import com.api.entities.*;
 
 public class PostDto {
 	private int postId;
@@ -16,19 +16,34 @@ public class PostDto {
 	
 	private UserDto user;
 	
+	private Set<CommentDto> comment=new HashSet<>();
+	
 	public PostDto() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 	
-	public PostDto(String title, String content, String imageName, Date addedDate, CategoryDto category, UserDto user) {
+	
+
+	public PostDto(int postId, String title, String content, String imageName, Date addedDate, CategoryDto category,
+			UserDto user, Set<CommentDto> comment) {
 		super();
+		this.postId = postId;
 		this.title = title;
 		this.content = content;
 		this.imageName = imageName;
 		this.addedDate = addedDate;
 		this.category = category;
 		this.user = user;
+		this.comment = comment;
+	}
+
+	public Set<CommentDto> getComment() {
+		return comment;
+	}
+
+	public void setComment(Set<CommentDto> comment) {
+		this.comment = comment;
 	}
 
 	public int getPostId() {
@@ -84,7 +99,8 @@ public class PostDto {
 
 	@Override
 	public String toString() {
-		return "PostDto [title=" + title + ", content=" + content + ", image=" + imageName + ", addedDate=" + addedDate
-				+ ", category=" + category + ", user=" + user + "]";
+		return "PostDto [postId=" + postId + ", title=" + title + ", content=" + content + ", imageName=" + imageName
+				+ ", addedDate=" + addedDate + ", category=" + category + ", user=" + user + ", comment=" + comment
+				+ "]";
 	}
 }
